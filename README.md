@@ -7,12 +7,15 @@ Primary benefits of this deployment model include:
 - Continuous Tracking of Transient Workloads
 - Granular Endpoint & Compliance Visibility
 
+---
 _**Inception State:**_ No Nessus Agent installed or configured, no scan group created.   
 _**Completion State:**_ Nessus Agent fully installed, agent group created, scan ran, vulnerabilities identified, and initial assessment conducted.
 
 ![Screenshot 2025-06-06 102351](https://github.com/user-attachments/assets/b18b3150-3fdd-41b8-a487-23c6531d5324)
 
 ![graphic_nessus_agent_technical_paper1](https://github.com/user-attachments/assets/1a7d14bf-377a-4f4a-94c1-50b02b6b3a79)
+
+---
 
 # Technology Utilized
 - **Tenable** (Nessus Agent, Tenable.io Cloud platform)
@@ -28,10 +31,14 @@ _**Completion State:**_ Nessus Agent fully installed, agent group created, scan 
 
 <img width="1000" height="800" alt="Deploying VM" src="AgentBasedMon-Windows/VM Deployed.png"/> 
 
+---
+
 ## 2. Nessus Agent Group Creation
 **Next, we'll create a new Agent Group in Tenable in order to localize the agent for our VM:**
 
 <img width="1000" height="800" alt="Creating agent" src="AgentBasedMon-Windows/Creating Agent Group.png"/> 
+
+---
 
 ## 3. Nessus Agent Scan Creation
 **Then, we'll create a Basic Agent Scan connected to our Agent Group created in the previous step:**
@@ -44,6 +51,7 @@ _**Completion State:**_ Nessus Agent fully installed, agent group created, scan 
 
 <img width="1000" height="800" alt="setting scan type" src="AgentBasedMon-Windows/Selecting scan type.png"/> 
 
+---
 
 ## 4. Running Command from Tenable to intall the Agent inside the VM
 **When creating a Linked Agent, Tenable provides the PowerShell command needed to initiate the installation process on the VM:**
@@ -58,6 +66,8 @@ _**Completion State:**_ Nessus Agent fully installed, agent group created, scan 
 
 <img width="1000" height="800" alt="agent finished installing" src="AgentBasedMon-Windows/Agent finished installing.png"/> 
 
+---
+
 ## 5. Creating the `start.txt` trigger file in PowerShell inside the VM:
 **The Agent will detect it, use it as the trigger, and once finished, will delete the trigger file.**
 
@@ -67,19 +77,17 @@ _**Completion State:**_ Nessus Agent fully installed, agent group created, scan 
 
 <img width="1000" height="800" alt="confirming Tenable Agent is running" src="AgentBasedMon-Windows/Confirmation of Tenable Agent Running.png"/> 
 
-
-
-
+---
 
 ## 6. File Deleted and Results
-**After 10 minutes the file star.txt was triggered and deleted from the VM**
+**After some time, the file `start.txt` was triggered and deleted from the VM**
 
-![13- After 10 minutes the the file was deleted](https://github.com/user-attachments/assets/b340555f-a809-483e-85cd-0e4c16b7f3de)
+<img width="1000" height="800" alt="confirming start.txt file deleted" src="AgentBasedMon-Windows/Start file deleted.png"/> 
 
-**In Tenable is showing that the scan was triggered**
+**Status of scan showing `Triggered` in Tenable:**
 
-![14- In Scans is showing as triggered](https://github.com/user-attachments/assets/5e191783-8737-4071-93a4-c95a4be21b60)
+<img width="1000" height="800" alt="scan status showing 'Triggered'" src="AgentBasedMon-Windows/Scan confirmation status.png"/> 
 
-**The Results from the Scan**
+**...And finally, the results from the scan**
 
-![15- Check the Results from Scan](https://github.com/user-attachments/assets/e5dffb82-a46a-424c-96cb-79c18e7a7959)
+<img width="1000" height="800" alt="scan results" src="AgentBasedMon-Windows/Scan results.png"/> 
