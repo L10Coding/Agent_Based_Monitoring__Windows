@@ -21,52 +21,46 @@ _**Completion State:**_ Nessus Agent fully installed, agent group created, scan 
 
 **To start, we'll provision a Windows 11 virtual machine in Azure:**
 
-![1-Created VM](https://github.com/user-attachments/assets/eebd4c61-d000-4f7a-a6ad-49a0cb3b1065)
+<img width="1000" height="800" alt="Deploying VM" src="AgentBasedMon-Windows/VM Deployed.png"/> 
 
 ## 2. Nessus Agent Group Creation
 **Next, we'll create a new Agent Group in Tenable in order to localize the agent for our VM:**
 
-![2- Tenable - Settings - Sensors](https://github.com/user-attachments/assets/450c7f5a-b5ef-4a37-b57f-a55678c3138f)
-
-![3- In Sensors page - Nessus Agents - Agents Group](https://github.com/user-attachments/assets/feb1f280-a997-4b9b-8605-e4529ee3949d)
-
-![4- Added an Agent Group](https://github.com/user-attachments/assets/cc528698-b075-46cf-91a9-47649f84feae)
+<img width="1000" height="800" alt="Creating agent" src="AgentBasedMon-Windows/Creating Agent Group.png"/> 
 
 ## 3. Nessus Agent Scan Creation
 **Then, we'll create a Basic Agent Scan connected to our Agent Group created in the previous step:**
 
-![5- Scans - Create Scan - Nessus Agent - Basic Agent Scan](https://github.com/user-attachments/assets/f83b88bd-6f8d-4206-9c55-05aee09df51b)
+<img width="1000" height="800" alt="Creating scan" src="AgentBasedMon-Windows/Creating scan.png"/> 
 
-![6- Editing the Scan - Including the Group Agent](https://github.com/user-attachments/assets/8f38d4e0-d7cd-4d3e-b1d1-2812f73323c0)
+<img width="1000" height="800" alt="Creating scan" src="AgentBasedMon-Windows/Creating scan2.png"/> 
 
-**Set Scan Type to Trigger Scan, Selected Filename and then included the star.txt**
+**Set Scan Type to Trigger Scan, Selected Filename and then included the start.txt**
 
-![Screenshot 2025-06-06 135533](https://github.com/user-attachments/assets/71a59913-3201-47f5-adb2-f2724ffa26f7)
-
-
-## 4. Ran Command from Tenable to intall the Agent inside the VM
-**Got the Command from Tenable by creating a Linked Agent, copied and pasted in Powershell inside the VM to install the Agent**
-
-![8- Get Command from Linked Agents from Creating a new agent to run in the VM to install the Agent](https://github.com/user-attachments/assets/46a7d650-f869-4962-9584-a00291a662ba)
+<img width="1000" height="800" alt="setting scan type" src="AgentBasedMon-Windows/Selecting scan type.png"/> 
 
 
+## 4. Running Command from Tenable to intall the Agent inside the VM
+**Command was provided by Tenable when creating a Linked Agent. Pasted this command into PowerShell on the VM to initiate the installation prcoess:**
 
+<img width="1000" height="800" alt="provisioning agent" src="AgentBasedMon-Windows/Provisioning Tenable Agent.png"/> 
 
-![9- Inside VM ran code in Powershell to Install the Agent](https://github.com/user-attachments/assets/ebede4ce-70a2-47a1-a747-a3c006fcdf4e)
+<img width="1000" height="800" alt="running command on VM" src="AgentBasedMon-Windows/Running command on VM.png"/> 
 
 This command downloads the PowerShell script from the Tenable server, places it in the current directory in PowerShell, and executes by connecting the key value password that lets the script know to connect to the Tenable console and lets it know it's an agent.
 
+<img width="1000" height="800" alt="agent installing" src="AgentBasedMon-Windows/Agent Installing.png"/> 
 
+<img width="1000" height="800" alt="agent finished installing" src="AgentBasedMon-Windows/Agent finished installing.png"/> 
 
-## 5. Created the file name star.txt in PowerShell inside the VM
-**Used these commands to create the star.txt file so the Agent can detect, trigger and delete the file**
+## 5. Creating the 'file name' star.txt in PowerShell inside the VM
+**Creating the star.txt file so the Agent can detect, trigger and delete the file**
 
-![10- Created the star txt file to trigger the scan](https://github.com/user-attachments/assets/14ac16db-7459-4eae-b79e-f7fe960f9837)
-
-![11- File showing in the folder](https://github.com/user-attachments/assets/738cd3dc-8823-4d46-89d7-0b4309a586d9)
+<img width="1000" height="800" alt="creating trigger file" src="AgentBasedMon-Windows/Creating trigger file in PowerShell.png"/> 
 
 **Made sure that Tenable Nessus Agent was running in Services**
-![12- Made sure the Tenable Nessus Agent was running](https://github.com/user-attachments/assets/76ca8adf-d4e2-43a4-be95-f3ac539dec20)
+
+<img width="1000" height="800" alt="confirming Tenable Agent is running" src="AgentBasedMon-Windows/Confirmation of Tenable Agent Running.png"/> 
 
 ## 6. File Deleted and Results
 **After 10 minutes the file star.txt was triggered and deleted from the VM**
