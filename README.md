@@ -10,14 +10,14 @@ _**Completion State:**_ Nessus Agent fully installed, agent group created, scan 
 ![graphic_nessus_agent_technical_paper1](https://github.com/user-attachments/assets/1a7d14bf-377a-4f4a-94c1-50b02b6b3a79)
 
 # Technology Utilized
-- Tenable (Nessus Agent, Tenable.io Cloud platform)
-- Azure Virtual Machines (Windows 10 Pro)
-- PowerShell (Agent installation and configuration)
-- Tenable Agent Groups (for grouping scan targets)
+- **Tenable** (Nessus Agent, Tenable.io Cloud platform)
+- **Azure Virtual Machines** (Windows 11 Pro)
+- **PowerShell** (Agent installation and configuration)
+- **Tenable Agent Groups** (for grouping scan targets)
 
 ---
 
-## 1. VM and Nessus Agent Setup
+## 1. Provisioning Azure Virtual Machine
 
 **To start, we'll provision a Windows 11 virtual machine in Azure:**
 
@@ -35,19 +35,19 @@ _**Completion State:**_ Nessus Agent fully installed, agent group created, scan 
 
 <img width="1000" height="800" alt="Creating scan" src="AgentBasedMon-Windows/Creating scan2.png"/> 
 
-**Set Scan Type to Trigger Scan, Selected Filename and then included the start.txt**
+**Setting the scan type to `Trigger Scan`, Selecting `Filename` and then including the `start.txt`**
 
 <img width="1000" height="800" alt="setting scan type" src="AgentBasedMon-Windows/Selecting scan type.png"/> 
 
 
 ## 4. Running Command from Tenable to intall the Agent inside the VM
-**Command was provided by Tenable when creating a Linked Agent. Pasted this command into PowerShell on the VM to initiate the installation prcoess:**
+**When creating a Linked Agent, Tenable provides the PowerShell command needed to initiate the installation process on the VM:**
 
 <img width="1000" height="800" alt="provisioning agent" src="AgentBasedMon-Windows/Provisioning Tenable Agent.png"/> 
 
 <img width="1000" height="800" alt="running command on VM" src="AgentBasedMon-Windows/Running command on VM.png"/> 
 
-This command downloads the PowerShell script from the Tenable server, places it in the current directory in PowerShell, and executes by connecting the key value password that lets the script know to connect to the Tenable console and lets it know it's an agent.
+**This command downloads the PowerShell script from the Tenable server, places it in the current directory in PowerShell, and executes by connecting the key value password that lets the script know to connect to the Tenable console and lets it know it's an agent.**
 
 <img width="1000" height="800" alt="agent installing" src="AgentBasedMon-Windows/Agent Installing.png"/> 
 
