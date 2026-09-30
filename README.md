@@ -1,9 +1,14 @@
 # Implementing Agent Based Monitoring of a Windows 11 VM
-Project detailing the deployment of a Tenable/Nessus Agent on a Windows 11 Virtual Machine in Azure. 
+Project detailing the deployment of a Tenable/Nessus Agent on a Windows 11 Virtual Machine in Azure. By running locally on the VM's operating system, the agent acts as an internal sensor to efficiently track vulnerabilities and configuration drift.
 
-_**Inception State:**_ No Nessus Agent installed or configured, no scan group created.
+Primary benefits of this deployment model include:
+- No Credential Management Overhead
+- Drastically Reduced Network Impact & Complexity 
+- Continuous Tracking of Transient Workloads
+- Granular Endpoint & Compliance Visibility
 
-_**Completion State:**_ Nessus Agent fully installed, agent group created, scan run, vulnerabilities identified, and initial assessment conducted.
+_**Inception State:**_ No Nessus Agent installed or configured, no scan group created.   
+_**Completion State:**_ Nessus Agent fully installed, agent group created, scan ran, vulnerabilities identified, and initial assessment conducted.
 
 ![Screenshot 2025-06-06 102351](https://github.com/user-attachments/assets/b18b3150-3fdd-41b8-a487-23c6531d5324)
 
