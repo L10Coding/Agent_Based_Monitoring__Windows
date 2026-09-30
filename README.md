@@ -53,14 +53,18 @@ This command downloads the PowerShell script from the Tenable server, places it 
 
 <img width="1000" height="800" alt="agent finished installing" src="AgentBasedMon-Windows/Agent finished installing.png"/> 
 
-## 5. Creating the 'file name' star.txt in PowerShell inside the VM
-**Creating the star.txt file so the Agent can detect, trigger and delete the file**
+## 5. Creating the `start.txt` trigger file in PowerShell inside the VM:
+**The Agent will detect it, use it as the trigger, and once finished, will delete the trigger file.**
 
 <img width="1000" height="800" alt="creating trigger file" src="AgentBasedMon-Windows/Creating trigger file in PowerShell.png"/> 
 
-**Made sure that Tenable Nessus Agent was running in Services**
+**Confirming that Tenable Nessus Agent is running via Services on the VM**
 
 <img width="1000" height="800" alt="confirming Tenable Agent is running" src="AgentBasedMon-Windows/Confirmation of Tenable Agent Running.png"/> 
+
+
+
+
 
 ## 6. File Deleted and Results
 **After 10 minutes the file star.txt was triggered and deleted from the VM**
